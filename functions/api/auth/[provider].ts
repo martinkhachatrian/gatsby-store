@@ -1,3 +1,5 @@
 export const onRequest: PagesFunction = async (context) => {
-    return new Response('Heeeeeeeey');
+    const res = await fetch('https://dog.ceo/api/breeds/image/random')
+
+    return res.json();
 }
