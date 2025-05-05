@@ -1,41 +1,25 @@
 import {Link, Slice, SliceComponentProps} from 'gatsby'
 import {FormattedMessage} from 'react-intl'
+import * as React from 'react'
 
 interface HeaderProps {
 
 }
 
-export default function HeaderSlice(props: SliceComponentProps) {
-  console.info('Header props:', props)
-  const {sliceContext} = props
-  const {
-    lang,
-    navItem1,
-    navItem2
-  } = sliceContext as any
-
+export default function HeaderSlice() {
   return (
-    <header className="flex w-full">
-      <nav>
-        <ul className="flex">
-          <li className="mr-6 p-4">
-            <Link className="text-blue-500 hover:text-blue-800" to={`/${lang}/home`}>
-              <FormattedMessage id={navItem1} defaultMessage={navItem1} />
-              {navItem1}
-            </Link>
-          </li>
-
-          <li className="mr-6  p-4">
-            <Link className="text-blue-500 hover:text-blue-800" to={`/${lang}/product/product-1`}>{navItem2}</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="relative py-8 text-center bg-indigo-600 text-white shadow-md">
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-4xl">👨‍🍳</div>
+      <div className="container mx-auto px-4">
+        <Link to="/" className="text-4xl md:text-5xl font-bold">Cook The Code</Link>
+        <div className="text-xl mt-2 italic">Where Programming Gets Deliciously Debugged</div>
+      </div>
     </header>
   )
 }
 
 export const Header = (props: HeaderProps) => {
   return (
-    <Slice alias={'header'} allowEmpty newprop={23423423} />
+    <HeaderSlice/>
   )
 }

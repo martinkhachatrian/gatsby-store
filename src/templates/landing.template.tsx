@@ -4,12 +4,11 @@ import {Seo} from '../components/seo/seo';
 
 export default function LandingTemplate(props: PageProps): JSX.Element {
     console.log('HomeTemplate props ', props)
-    const {pageContext: { translations }} = props
 
     return (
         <div>
-            <h1 className="text-3xl mb-2">{translations.title}</h1>
-            <h3 className="text-2xl">{translations.subtitle}</h3>
+            <h1 className="text-3xl mb-2">{''}</h1>
+            <h3 className="text-2xl">{''}</h3>
         </div>
     )
 }
