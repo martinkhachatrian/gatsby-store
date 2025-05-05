@@ -7,7 +7,7 @@ interface Props {
 }
 
 // Cloudflare Function API endpoint
-const CF_API_URL = 'https://localhost:8788/api/likes';
+const CF_API_URL = `${process.env.GATBSY_SITE_URL}/api/likes`;
 
 const LikeButton = ({ recipeId }: Props) => {
   const [likes, setLikes] = useState(0);
